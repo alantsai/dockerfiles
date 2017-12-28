@@ -1,8 +1,11 @@
-# hadoop-dotnet
+# hadoop
 
-Image for running .NET MapReduce jobs. Installed with Hadoop and .NET Core. This is the sample image used in my upcoming [Pluralsight course](https://www.pluralsight.com/authors/elton-stoneman), *Hadoop for .NET Developers* - [follow me on Twitter](https://twitter.com/EltonStoneman) for updates on that.
+This image is built up base on [sixeyed/hadoop-dotnet](https://hub.docker.com/r/sixeyed/hadoop-dotnet/)
 
-There's a walkthrough on my blog: [Hadoop and .NET: A Match Made in Docker](https://blog.sixeyed.com/hadoop-and-net-core-a-match-made-in-docker/)
+This differ in 
+- use debian-stretch-slim as base
+- use opendjdk-java8-sdk
+- use .net core 2.0
 
 ## Usage
 
@@ -18,7 +21,7 @@ The [Docker Compose](docker-compose.yml) file shows a simple cluster setup with 
 
 ##Running .NET MapReduce jobs
 
-.NET Core 1.0.0 is installed on the image, so you can copy compiled .NET Core dlls into the container and run them as Hadoop streaming jobs. If you have all your DLLs and dependencies in a local folder called `dotnetcore`, first copy the folder to the master node:
+.NET Core 2.0 is installed on the image, so you can copy compiled .NET Core dlls into the container and run them as Hadoop streaming jobs. If you have all your DLLs and dependencies in a local folder called `dotnetcore`, first copy the folder to the master node:
 
 ```
 docker cp dotnetcore hadoop-dotnet-master:/dotnetcore
