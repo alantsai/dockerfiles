@@ -7,6 +7,10 @@ This differ in
 - use opendjdk-java8-sdk
 - use .net core 2.0
 
+## 檔案大小
+
+解壓縮之後約：928MB
+
 ## Example Usage (使用範例)
 
 詳細每個指令說明請參考：[[10]用.Net Core跑Hadoop MapReduce - Streaming介紹](https://github.com/alantsai/blog-data-science-series/tree/master/src/chapter-10-dotnet-mapreduce#10%E7%94%A8net-core%E8%B7%91hadoop-mapreduce---streaming%E4%BB%8B%E7%B4%B9)
