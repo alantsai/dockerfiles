@@ -7,6 +7,38 @@ This differ in
 - use opendjdk-java8-sdk
 - use .net core 2.0
 
+## Example Usage (使用範例)
+
+詳細每個指令說明請參考：[[10]用.Net Core跑Hadoop MapReduce - Streaming介紹](https://github.com/alantsai/blog-data-science-series/tree/master/src/chapter-10-dotnet-mapreduce#10%E7%94%A8net-core%E8%B7%91hadoop-mapreduce---streaming%E4%BB%8B%E7%B4%B9)
+
+以下powershell指令是用.Net Core的程式透過Hadoop Streaming來執行MapReduce的操作
+
+```powershell
+dotnet publish -o ${pwd}\dotnetmapreduce .\DotNetMapReduceWordCount\DotNetMapReduceWordCount.sln
+
+docker-compose up -d
+
+docker cp dotnetmapreduce hadoop-dotnet-master:/dotnetmapreduce
+
+docker exec -it hadoop-dotnet-master bash
+
+hadoop fs -mkdir -p /input
+hadoop fs -copyFromLocal /dotnetmapreduce/jane_austen.txt /input
+hadoop fs -ls /input
+
+
+hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar \
+	-files "/dotnetmapreduce" \
+	-mapper "dotnet dotnetmapreduce/DotNetMapReduceWordCount.Mapper.dll" \
+	-reducer  "dotnet dotnetmapreduce/DotNetMapReduceWordCount.Reducer.dll" \
+	-input /input/* -output /output
+
+hadoop fs -ls /output
+hadoop fs -cat /output/part-00000
+
+docker-compose down
+```
+
 ## Usage
 
 Containers can start as a 'master' (running the HDFS Name Node and YARN Resource Manager services), or as a 'worker' (running HDFS Data Node and YARN Node Manager services).
