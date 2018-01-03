@@ -31,6 +31,7 @@ WORKDIR /downloads
 VOLUME ["/downloads"]
 
 COPY start-youtubedl.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/start-youtubedl.sh
 
 ENTRYPOINT ["/usr/local/bin/start-youtubedl.sh"]
 
