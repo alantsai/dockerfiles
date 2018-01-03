@@ -204,4 +204,4 @@ makefile text
 *.exe binary
 
 
-build text eol=lf
+**/hooks/* text eol=lf
