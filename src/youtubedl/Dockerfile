@@ -1,5 +1,20 @@
 FROM alpine:3.7
 
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="Youtube-dl with specific site setting" \
+      org.label-schema.description="youtube-dl with some site with specific setting available, easier to download" \
+      org.label-schema.url="https://github.com/alantsai/dockerfiles/tree/master/src/youtubedl" \
+      org.label-schema.vcs-url="https://github.com/alantsai/dockerfiles.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.version="v-youtubedl-2017.12.14-alpine_3.7" \
+      org.label-schema.vendor="Alan Tsai" \
+      org.label-schema.docker.cmd="docker run -it --rm -v \"${pwd}:/downloads\" alantsai/youtubedl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' https://www.youtube.com/xxx" \
+      org.label-schema.docker.help="docker run -it --rm alantsai/youtubedl help" \
+      org.label-schema.schema-version="1.0.0-rc1"
+
 ENV YOUTUBE_DL_VERSION=2017.12.14 
 ENV YOUTUBE_DL_DOWNLOAD_BASE_URL=https://github.com/rg3/youtube-dl/releases/download/${YOUTUBE_DL_VERSION}
 ENV YOUTUBE_DL_DOWNLOAD_EXE_URL=${YOUTUBE_DL_DOWNLOAD_BASE_URL}/youtube-dl 
