@@ -1,5 +1,19 @@
 FROM openjdk:8-jdk-slim
 
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="Testing and Evaluating Hadoop with .net core 2.0 sdk installed" \
+      org.label-schema.description="Easy evaluate hadoop with running .net core console as map reduce job" \
+      org.label-schema.url="https://github.com/alantsai/dockerfiles/tree/master/src/hadoop" \
+      org.label-schema.vcs-url="https://github.com/alantsai/dockerfiles.git" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.version="v-hadoop-2.7.2-dotnetcore2.0-stretch_slim" \
+      org.label-schema.vendor="Alan Tsai" \
+      org.label-schema.docker.cmd="docker-compose -d" \
+      org.label-schema.schema-version="1.0.0-rc1"
+
 # Hadoop
 
 ENV HADOOP_VERSION	2.7.2
