@@ -7,9 +7,11 @@ This differ in
 - use opendjdk-java8-sdk
 - use .net core 2.0
 
-## 檔案大小
+## Docker Image
 
-解壓縮之後約：928MB
+| Tag | Image Commit | Image Size And Layer | Image Size After Pull|
+|-----|--------------|----------------------|----------------------|
+| [![](https://images.microbadger.com/badges/version/alantsai/hadoop:2.7.2-dotnetcore2.0-stretch_slim.svg)](https://microbadger.com/images/alantsai/hadoop:2.7.2-dotnetcore2.0-stretch_slim "Get your own version badge on microbadger.com") | [![](https://images.microbadger.com/badges/commit/alantsai/hadoop:2.7.2-dotnetcore2.0-stretch_slim.svg)](https://microbadger.com/images/alantsai/hadoop:2.7.2-dotnetcore2.0-stretch_slim "Get your own commit badge on microbadger.com") | [![](https://images.microbadger.com/badges/image/alantsai/hadoop:2.7.2-dotnetcore2.0-stretch_slim.svg)](https://microbadger.com/images/alantsai/hadoop:2.7.2-dotnetcore2.0-stretch_slim "Get your own image badge on microbadger.com") | 928MB |
 
 ## Example Usage (使用範例)
 
