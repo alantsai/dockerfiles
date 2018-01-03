@@ -8,9 +8,11 @@ youtube-dl主要用來下載多個影片網站的工具。
 1. 用docker就能夠使用工具
 2. 有些網站已經有定義好一些參數 - 方便下載的時候不需要傳入太多參數
 
-## 檔案大小
+## Docker Image
 
-解壓縮之後約：92MB
+| Tag | Image Commit | Image Size And Layer | Image Size After Pull|
+|-----|--------------|----------------------|----------------------|
+| [![](https://images.microbadger.com/badges/version/alantsai/youtubedl:2017.12.14-alpine_3.7.svg)](https://microbadger.com/images/alantsai/youtubedl:2017.12.14-alpine_3.7 "2017.12.14-alpine_3.7") | [![](https://images.microbadger.com/badges/commit/alantsai/youtubedl:2017.12.14-alpine_3.7.svg)](https://microbadger.com/images/alantsai/youtubedl:2017.12.14-alpine_3.7 "2017.12.14-alpine_3.7") | [![](https://images.microbadger.com/badges/image/alantsai/youtubedl:2017.12.14-alpine_3.7.svg)](https://microbadger.com/images/alantsai/youtubedl:2017.12.14-alpine_3.7 "2017.12.14-alpine_3.7") | 92MB |
 
 ## 快速使用
 
