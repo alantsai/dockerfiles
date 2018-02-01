@@ -27,7 +27,7 @@ if [ "$1" = "pluralsight" ]; then
     cookieFile="$downloads/cookies.txt"
     
     if [ -f "$cookieFile" ]; then
-        cookieFile=(--cookies $cookieFile)
+        cookieCommand=(--cookies $cookieFile)
     fi
 
     if [ -f "$downloadFile" ]; then
@@ -36,7 +36,7 @@ if [ "$1" = "pluralsight" ]; then
             downloadlink=($6)
     fi
 
-    exec youtube-dl "${username[@]}" "${password[@]}" "${outputformat[@]}" "${sleepInterval[@]}" "${sleepMaxInterval[@]}" "${withSub[@]}" "${userAgent[@]}" "${cookieFile[@]}" "${downloadlink[@]}"
+    exec youtube-dl "${username[@]}" "${password[@]}" "${outputformat[@]}" "${sleepInterval[@]}" "${sleepMaxInterval[@]}" "${withSub[@]}" "${userAgent[@]}" "${cookieCommand[@]}" "${downloadlink[@]}"
 elif [ "$1" == "debug" ]; then
     shift
     exec "$@"    
