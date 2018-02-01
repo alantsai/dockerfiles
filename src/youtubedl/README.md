@@ -45,7 +45,7 @@ docker run -it --rm -v "${pwd}:/downloads" alantsai/youtubedl `
 
 同等於直接呼叫
 
-`youtube-dl  -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' https://www.youtube.com/xxx`
+`youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' https://www.youtube.com/xxx`
 
 ## 特定網站指令
 
@@ -71,7 +71,8 @@ docker run -it --rm -v "${pwd}:/downloads" alantsai/youtubedl `
 舉例來說：
 
 ```powershell
-docker container run --rm -v ${pwd}:/downloads alantsai/youtubedl pluralsight username password
+docker container run --rm -it `
+    -v ${pwd}:/downloads alantsai/youtubedl pluralsight username password
 ```
 
 同等於，使用輸入的帳號密碼，其他為預設值，然後會用`${pwd}/files.txt`的檔案鏈接作為下載。
