@@ -8,6 +8,8 @@ youtube-dl主要用來下載多個影片網站的工具。
 1. 用docker就能夠使用工具
 2. 有些網站已經有定義好一些參數 - 方便下載的時候不需要傳入太多參數
 
+最新的ReadMe請看：[github alantsai/dockerfiles youtubedl/ReadMe.md](https://github.com/alantsai/dockerfiles/blob/master/src/youtubedl/README.md)
+
 ## Docker Image
 
 | Tag | Image Commit | Image Size And Layer | Image Size After Pull|
