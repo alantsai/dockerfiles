@@ -11,7 +11,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.version="v-youtubedl-2017.12.14-alpine_3.7" \
       org.label-schema.vendor="Alan Tsai" \
-      org.label-schema.docker.cmd="docker run -it --rm -v \"${pwd}:/downloads\" alantsai/youtubedl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' https://www.youtube.com/xxx" \
+      org.label-schema.docker.cmd="docker run -it --rm -v \"\${pwd}:/downloads\" alantsai/youtubedl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' https://www.youtube.com/xxx" \
       org.label-schema.docker.help="docker run -it --rm alantsai/youtubedl help" \
       org.label-schema.schema-version="1.0.0-rc1"
 
