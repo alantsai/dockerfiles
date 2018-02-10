@@ -12,7 +12,7 @@ services:
       interval: 10s
       retries: 10
   octopus:
-    image: octopusdeploy/octopusdeploy
+    image: octopusdeploy/octopusdeploy:4.1.4
     environment:
       OctopusAdminUsername: "${OCTOPUS_ADMIN_USERNAME}"
       OctopusAdminPassword: "${OCTOPUS_ADMIN_PASSWORD}"
@@ -23,11 +23,11 @@ services:
       db:
         condition: service_healthy
     stdin_open: true #Process sits and waits for ReadLine
-    #volumes:
-    #  - "../tests/Import:C:/Import"
-    #  - "../tests/Repository:C:/Repository"
+    volumes:
+      - "../tests/Import:C:/Import"
+      #- "../tests/Repository:C:/Repository"
   tentacle:
-    image: alantsai/octopus-tentacle
+    image: alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016
     depends_on:
       octopus:
         condition: service_healthy
@@ -39,7 +39,7 @@ services:
       ServerUrl: "http://octopus:81"
     stdin_open: true #Process sits and waits for ReadLine
     #volumes:
-    #  - "../tests/Applications:C:/Applications"
+      #- "../tests/Applications:C:/Applications"
 networks:
   default:
     external:
