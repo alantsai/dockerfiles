@@ -8,6 +8,12 @@
 
 最新的ReadMe請看：[github alantsai/dockerfiles Octopus-Tentacle/ReadMe.md](https://github.com/alantsai/dockerfiles/blob/master/src/Octopus-Tentacle/README.md)
 
+## Docker Image
+
+| Tag | Image Commit | Image Size And Layer | Image Size After Pull|
+|-----|--------------|----------------------|----------------------|
+| [![](https://images.microbadger.com/badges/version/alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016.svg)](https://microbadger.com/images/alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016 "3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016") | [![](https://images.microbadger.com/badges/commit/alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016.svg)](https://microbadger.com/images/alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016 "3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016") | [![](https://images.microbadger.com/badges/image/alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016.svg)](https://microbadger.com/images/alantsai/octopus-tentacle:3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016 "3.16.3-aspnet_4.7.1_windowsservercore_ltsc2016") | 13.6GB |
+
 ## 如何run起來
 
 建議使用docker compose run起來。
