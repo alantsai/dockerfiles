@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   db:
-    image: microsoft/mssql-server-windows-express
+    image: microsoft/mssql-server-windows-express:2016-sp1
     environment:
       sa_password: "${SA_PASSWORD}"
       ACCEPT_EULA: "Y"
@@ -12,7 +12,7 @@ services:
       interval: 10s
       retries: 10
   octopus:
-    image: octopusdeploy/octopusdeploy${OCTOPUS_SERVER_REPO_SUFFIX}:${OCTOPUS_VERSION}
+    image: octopusdeploy/octopusdeploy
     environment:
       OctopusAdminUsername: "${OCTOPUS_ADMIN_USERNAME}"
       OctopusAdminPassword: "${OCTOPUS_ADMIN_PASSWORD}"
@@ -23,11 +23,11 @@ services:
       db:
         condition: service_healthy
     stdin_open: true #Process sits and waits for ReadLine
-    volumes:
-      - "../tests/Import:C:/Import"
-      - "../tests/Repository:C:/Repository"
+    #volumes:
+    #  - "../tests/Import:C:/Import"
+    #  - "../tests/Repository:C:/Repository"
   tentacle:
-    image: octopusdeploy/tentacle${OCTOPUS_TENTACLE_REPO_SUFFIX}:${TENTACLE_VERSION}
+    image: alantsai/octopus-tentacle
     depends_on:
       octopus:
         condition: service_healthy
@@ -38,8 +38,8 @@ services:
       TargetRole: "app-server"
       ServerUrl: "http://octopus:81"
     stdin_open: true #Process sits and waits for ReadLine
-    volumes:
-      - "../tests/Applications:C:/Applications"
+    #volumes:
+    #  - "../tests/Applications:C:/Applications"
 networks:
   default:
     external:
